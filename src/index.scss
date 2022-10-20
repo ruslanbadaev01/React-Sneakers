@@ -24,7 +24,6 @@ header{
     h3,p{
       margin: 0;
     }
-  
 }
 
 .content{
@@ -45,7 +44,6 @@ header{
     box-shadow: 0px 20px 30px rgba(0, 0, 0, .06);
     transform: translateY(-5px);
   }
-
   span{
     font-size: 13px;
     opacity: .5;
@@ -54,7 +52,6 @@ header{
   b{
     font-size: 13px;
   }
-
   h5{
     font-weight: 400;
     font-size: 13px;
@@ -111,7 +108,6 @@ header{
     overflow: auto;
     margin-bottom: 40px;
   }
-
     h2{
      margin: 0; 
      font-size: 24px;
@@ -127,7 +123,6 @@ ul{
     align-items: flex-end;
     margin-bottom: 20px;
     }
-
     div{
       flex: 1;
       height: 1px;
@@ -141,10 +136,10 @@ ul{
     position: relative;
 
     &:hover{
-      img{
-      animation: moveArrow 1s;
-      animation-iteration-count: infinite;
-    }
+        img{
+        animation: moveArrow 1s;
+        animation-iteration-count: infinite;
+      }
     }
     @keyframes moveArrow {
       0%{
@@ -214,5 +209,4 @@ ul{
       opacity: 1;
     }
   }
-
 }
