@@ -11,7 +11,7 @@ return(
                     <span>Цена:</span>
                     <b>{props.price} руб.</b>
                 </div>
-                <button className="button" >
+                <button className="button" onClick={ () => alert('1')} >
                     <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
                 </button>
             </div>
