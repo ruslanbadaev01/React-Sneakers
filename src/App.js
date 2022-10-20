@@ -23,8 +23,9 @@ function App() {
           </div>
         </div>
           <div className="d-flex">
-            {arr.map(obj => (
+            {arr.map((obj) => (
               <Card 
+              onClick={() => console.log(obj)}
               title={obj.title} 
               price={obj.price} 
               imageUrl={obj.imageUrl}
