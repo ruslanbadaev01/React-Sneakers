@@ -12,12 +12,12 @@ const arr = [
 
 function App() {
 
-  const [count, setCount] = React.useState(5);
-  
+  const [cartOpened, setCartOppened] = React.useState(false);
+
   return (
    <div className="wrapper clear">
-      <Drawer />
-      <Header />
+      { cartOpened && <Drawer   onClose={() => setCartOppened(false)} />}
+      <Header onClickCart={() => setCartOppened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center mb-40 justify-between">
           <h1>Все кроссовки</h1>
