@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from './components/Card'
 import Drawer from './components/Drawer';
 import Header from './components/Header';
@@ -10,6 +11,9 @@ const arr = [
 ];
 
 function App() {
+
+  const [count, setCount] = React.useState(5);
+  
   return (
    <div className="wrapper clear">
       <Drawer />
@@ -25,10 +29,11 @@ function App() {
           <div className="d-flex">
             {arr.map((obj) => (
               <Card 
-              onClick={() => console.log(obj)}
               title={obj.title} 
               price={obj.price} 
               imageUrl={obj.imageUrl}
+              onFavoritClick={() => console.log('Добавили в закладки ')}
+              onPlusClick={() => console.log('Добавили в корзину')}
               /> 
             ))}
           </div>
