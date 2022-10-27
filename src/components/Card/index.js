@@ -8,12 +8,14 @@ function Card({onFavoritClick,price,title,imageUrl,onPlusClick}){
         onPlusClick({ price, title, imageUrl});
         setIsAdded(!isAdded);
     }
-
-    
+    const [favorit, setLike]= React.useState(false);
+    const onFavorite = () =>{
+        setLike(!favorit)
+    }
 return(
         <div className={styles.card}>
-            <div className={styles.favorite}>
-                <img src="/img/unliked.svg" alt="" onClick={onFavoritClick}/>
+            <div className={styles.favorite} onClick={onFavorite}>
+                <img src={ favorit ? "/img/liked.svg" : "/img/unliked.svg"} alt="" onClick={onFavoritClick}/>
             </div>
             <img width={133} height={112} src={imageUrl} alt=""/>
             <h5>{title}</h5>

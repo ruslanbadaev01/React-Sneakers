@@ -8,6 +8,7 @@ import Header from './components/Header';
 function App() {
   const [items, setItems]= React.useState([]);
   const [cartItems, setCart]= React.useState([]);
+  const [favorite,setFavorite]= React.useState([]);
   const [seacrh,searchCart] = React.useState('');
   const [cartOpened, setCartOppened] = React.useState(false);
 
@@ -19,18 +20,18 @@ function App() {
       setCart(res.data)
     });
   }, [])
+
+
+
   const onAddCart = (obj) => {
     axios.post('https://6353d285ccce2f8c02fd5f0c.mockapi.io/cart', obj);
     setCart((prev) => [... prev, obj]);
   };
-
   const onRemoveItem =(id) =>{
     axios.delete(`https://6353d285ccce2f8c02fd5f0c.mockapi.io/cart/${id}`);
     console.log(id)
     setCart((prev) => prev.filter((item) => item.id !== id));
-    
   }
-
   const onChangeSearch = (event) =>{
     searchCart(event.target.value);
   }
@@ -57,7 +58,6 @@ function App() {
                 alt=''
               />
             )}
-
             <input onChange={onChangeSearch} value={seacrh} placeholder="Поиск" />
           </div>
         </div>
