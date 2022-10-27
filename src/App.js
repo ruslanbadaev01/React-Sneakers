@@ -33,7 +33,12 @@ function App() {
 
   return (
    <div className="wrapper clear">
-      { cartOpened && <Drawer items={cartItems}  onClose={() => setCartOppened(false)} />}
+      { cartOpened && 
+        <Drawer 
+          items={cartItems}  
+          onClose={() => setCartOppened(false)}
+        />
+       }
       <Header onClickCart={() => setCartOppened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center mb-40 justify-between">
@@ -53,7 +58,9 @@ function App() {
           </div>
         </div>
           <div className="d-flex flex-wrap">
-            {items.map((item) => (
+            {items
+            .filter((item) => item.title.includes(seacrh))
+            .map((item) => (
               <Card 
                 key={item.imageUrl}
                 title={item.title} 
