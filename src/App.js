@@ -8,7 +8,7 @@ import Header from './components/Header';
 function App() {
   const [items, setItems]= React.useState([]);
   const [cartItems, setCart]= React.useState([]);
-  const [favorite,setFavorite]= React.useState([]);
+  const [favorites,setFavorite]= React.useState([]);
   const [seacrh,searchCart] = React.useState('');
   const [cartOpened, setCartOppened] = React.useState(false);
 
@@ -21,7 +21,10 @@ function App() {
     });
   }, [])
 
-
+  const onAddFavorite = (obj) => {
+    axios.post('https://6353d285ccce2f8c02fd5f0c.mockapi.io/favorites', obj);
+    setFavorite((prev) => [... prev, obj]);
+  };
 
   const onAddCart = (obj) => {
     axios.post('https://6353d285ccce2f8c02fd5f0c.mockapi.io/cart', obj);
@@ -70,7 +73,7 @@ function App() {
                 title={item.title} 
                 price={item.price} 
                 imageUrl={item.imageUrl}
-                onFavoritClick={() => console.log('Добавили в закладки ')}
+                onFavoritClick={(obj) => onAddFavorite(obj)}
                 onPlusClick={(obj) => onAddCart(obj)}
               /> 
             ))}

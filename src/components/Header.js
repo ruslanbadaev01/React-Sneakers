@@ -15,6 +15,9 @@ return (
                     <span> 1205 руб.</span>
                 </li>
                 <li>
+                    <img className="mr-10" width={18} height={18} src="/img/heart.svg" alt=""/>
+                </li>
+                <li>
                     <img width={18} height={18} src="/img/user.svg" alt=""/>
                 </li>
             </ul>
